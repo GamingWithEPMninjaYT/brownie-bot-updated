@@ -1,0 +1,45 @@
+const Discord = require("discord.js");
+const bot = new Discord.Client()
+let prefix = "br!";
+bot.login("NzU4ODI4NDAzOTE0NDQwNzc1.X20oBQ.PqUYLlEcLukjsE_AtrBrECeEr1k");
+bot.on("ready", () => {
+console.log("Brownie has been updated!");
+})
+
+bot.on("message", async message => {
+
+  const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Brownie Help')
+	.setAuthor('DevilPanda#5161')
+	.setDescription('Here is a list of all of my commands!')
+	.setThumbnail('https://emoji.gg/emoji/PandaDevil')
+	.addFields(
+		{ name: 'Commands:', value: 'Support server: https://discord.gg/EFkmQTx' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: '__**Help**__', value: 'sends this DM', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://emoji.gg/emoji/PandaDevil')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://emoji.gg/emoji/PandaDevil');
+  
+
+    if(message.content == prefix + "help") {
+      message.author.send(exampleEmbed)
+        
+      
+    }
+    else if(message.content == prefix + "hi") {
+    message.channel.send("Hi there :D")
+    }
+    else if(message.content == prefix + "weather") {
+    message.channel.send("Here is your country's weather")
+    } else if(message.content == prefix + "support") {
+      message.channel.send("Here it is: https://discord.gg/6vVq9q8 ")        
+    }else {
+    return;
+    }
+    
+    });
